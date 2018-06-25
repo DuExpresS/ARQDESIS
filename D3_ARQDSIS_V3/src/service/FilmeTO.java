@@ -9,9 +9,6 @@ public class FilmeTO {
 	private String nome;
 	private String genero;
 	private ArrayList<Idioma> idioma;
-	private String idioma2 = "Bossini FDP";
-	private String idioma3[];
-	private ArrayList<String> idioma4;
 	
 	public FilmeTO(int id, String nome, String genero, ArrayList<Idioma> idioma) {
 		super();
@@ -58,24 +55,6 @@ public class FilmeTO {
 		this.idioma = idioma;
 	}
 	
-	public void setIdioma2(String idioma){
-		idioma2=idioma;
-	}
 	
-	public String getIdioma2(){
-		return idioma2;
-	}
-	
-	public void setIdioma3(String idioma3){
-
-	}
-	
-	public void setIdioma4(String idioma){
-		idioma4.add(idioma);
-	}
-	
-	public void setIdioma5(){
-		idioma4.add("Rola");
-	}
 	
 }

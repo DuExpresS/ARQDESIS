@@ -38,9 +38,9 @@
 
                             <div class="form-group col-md-6">
                 	<label> Idioma</label>
-                	<select name="idioma" multiple class="form-control">
-                		<c:forEach var="idioma" items="${idiomas}">
-                			<option value="${idioma.id }">${idioma.nome}</option>
+                	<select name="idioma" multiple class="form-control">                	
+                		<c:forEach var="idioma" items="${idiomas}" >
+	                			<option value="${idioma.id }">${idioma.nome}</option>                			
                 		</c:forEach>
                 	</select>
                 </div>

@@ -29,6 +29,30 @@ public class FilmeDAO {
 			}
 		}
 	
+	public ArrayList<Idioma> CarregarIdiomas(int idFilme){
+		Idioma idioma;
+		ArrayList<Idioma> lista = new ArrayList<>();
+		String sqlSelect = "SELECT i.id, i.nome FROM idioma i inner join filme_idioma fi on fi.idIdioma = i.id where fi.idFilme = ?";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			 stm.setInt(1,idFilme);
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					idioma = new Idioma();
+					idioma.setId(rs.getInt("id"));
+					idioma.setNome(rs.getString("nome"));
+					lista.add(idioma);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
+	}
+	
 	public void incluirFilmeIdioma(int idFilme, int idIdioma) {
 		String sqlInsert = "INSERT INTO Filme_Idioma(idFilme, idIdioma) VALUES (?, ?)";
 		// usando o try with resources do Java 7, que fecha o que abriu
@@ -68,6 +92,7 @@ public class FilmeDAO {
 					filme.setId(id);
 					filme.setNome(rs.getString("nome"));
 					filme.setGenero(rs.getString("genero"));
+					filme.setIdioma(CarregarIdiomas(id));
 				} else {
 				}
 			} catch (SQLException e) {
@@ -94,6 +119,7 @@ public class FilmeDAO {
 					filme.setId(rs.getInt("id"));
 					filme.setNome(rs.getString("nome"));
 					filme.setGenero(rs.getString("genero"));
+					filme.setIdioma(CarregarIdiomas(filme.getId()));
 					lista.add(filme);
 				}
 			} catch (SQLException e) {
@@ -119,6 +145,7 @@ public class FilmeDAO {
 					filme.setId(rs.getInt("id"));
 					filme.setNome(rs.getString("nome"));
 					filme.setGenero(rs.getString("genero"));
+					filme.setIdioma(CarregarIdiomas(filme.getId()));
 					lista.add(filme);
 				}
 			} catch (SQLException e) {

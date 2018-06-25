@@ -8,8 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.IdiomaDAO;
 import service.FilmeService;
 import service.FilmeTO;
+import service.IdiomaTO;
 
 public class BuscarFilmesIdioma implements Command {
 
@@ -20,8 +22,12 @@ public class BuscarFilmesIdioma implements Command {
 		String sIdioma = request.getParameter("idioma");
 		int iIdioma = Integer.parseInt(sIdioma);
 		ArrayList<FilmeTO> filmes = ls.BuscarIdioma(iIdioma);
+
+		IdiomaDAO ldao = new IdiomaDAO();
+		ArrayList<IdiomaTO> idiomas = ldao.listar();
 		
 		//enviar para o jsp
+		request.setAttribute("idiomas", idiomas);
 		request.setAttribute("filmes", filmes.toArray());
 		RequestDispatcher view = 
 		request.getRequestDispatcher("ListarFilmes.jsp");

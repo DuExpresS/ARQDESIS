@@ -13,7 +13,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="controller.do?command=BuscarFilmes">Filmes</a>
+                    <li><a href="FilmeControler.do?command=BuscarFilmes">Filmes</a>
                     </li>
                     <li><a href="#">Marcas</a>
                     </li>

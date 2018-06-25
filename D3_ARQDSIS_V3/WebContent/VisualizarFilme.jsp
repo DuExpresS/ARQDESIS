@@ -27,7 +27,7 @@
                                 Deseja realmente excluir este filme?
                             </div>
                             <div class="modal-footer">
-                                <form action="controller.do" method="post">
+                                <form action="FilmeControler.do" method="post">
                                     <input type="hidden" name="id" value="${filme.id }" />
                                     <button type="submit" class="btn btn-primary" name="command" value="ExcluirFilme">Sim</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
@@ -60,18 +60,21 @@
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <p><strong>Idioma</strong>
+                            <p><strong>Idiomas</strong>
                             </p>
+                            <c:forEach var="idm" items="${filme.idioma }">
                             <p>
-                                ${filme.idioma[1] }
+                                ${idm.nome};
                             </p>
+                            </c:forEach>
+                            
                         </div>
                     </div>
                     <hr />
                     <div id="actions" class="row">
                         <div class="col-md-12">
-                            <a href="controller.do?command=EditarFilme&id=${filme.id }" class="btn btn-primary">Editar</a>
-                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                        <a class="btn btn-warning" href="controller.do?command=EditarFilmeTela&id=${filme.id }">Editar</a>
+                            <a class="btn btn-danger" href="controller.do?command=DeletarFilme&id=${filme.id }">Excluir</a>
                             <a href="ListarFilmes.jsp" class="btn btn-default">Voltar</a>
                         </div>
                     </div>
