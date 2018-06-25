@@ -41,13 +41,13 @@ public class EditarFilme implements Command {
 			
 		//instanciar o service
 		FilmeService ls = new FilmeService();
-		ls.criar(filme);
+		ls.editar(filme);
 		filme = ls.carregar(filme.getId());
 		
 		//enviar para o jsp
 		request.setAttribute("filme", filme);
 		RequestDispatcher view = 
-		request.getRequestDispatcher("Filme.jsp");
+		request.getRequestDispatcher("VisualizarFilme.jsp");
 		view.forward(request, response);
 			
 	}

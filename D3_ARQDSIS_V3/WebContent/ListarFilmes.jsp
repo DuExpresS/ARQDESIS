@@ -30,7 +30,7 @@
                         <div class="modal-footer">
                             <form action="controller.do" method="post">
                                 <input type="hidden" name="id" id="id_excluir" />
-                                <button type="submit" class="btn btn-primary" name="command" value="ExcluirFilme">Sim</button>
+                                <button type="submit" class="btn btn-primary" name="command" value="DeletarFilme">Sim</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
                             </form>
                         </div>
@@ -52,7 +52,7 @@
                             <div class="input-group h2">
                                 <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Filmes (deixe vazio para trazer todos)">
                                 <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit" name="command" value="ListarFilmesBuscar">
+                <button class="btn btn-primary" type="submit" name="command" value="BuscarFilmesIdioma">
                     <span class="glyphicon glyphicon-search"></span>
                                 </button>
                                 </span>
@@ -66,7 +66,7 @@
                     <!-- /#top -->
                 </form>
                 <hr />
-                <c:if test="${not empty lista}">
+                <c:if test="${not empty filmes}">
                 <div id="list" class="row">
 
                     <div class="table-responsive col-md-12">
@@ -104,8 +104,8 @@
                                             </td> -->
                                             <td class="actions">
                                                 <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarFilme&id=${filme.id }">Visualizar</a>
-                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarFilme&id=${filme.id }">Editar</a>
-                                                <button id="btn${filme.id }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${filme.id }">Excluir</button>
+                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarFilmeTela&id=${filme.id }">Editar</a>
+                                                <a class="btn btn-danger btn-xs" href="controller.do?command=DeletarFilme&id=${filme.id }">Excluir</a>
                                             </td>
                                         </tr>             
                             </c:forEach>
@@ -117,24 +117,7 @@
                 </div>
                 <!-- /#list -->
 
-                <div id="bottom" class="row">
-                    <div class="col-md-12">
-                        <!-- /.pagination -->
-                        <ul class="pagination">
-                            <li class="disabled"><a>&lt; Anterior</a>
-                            </li>
-                            <li class="disabled"><a>1</a>
-                            </li>
-                            <li><a href="#">2</a>
-                            </li>
-                            <li><a href="#">3</a>
-                            </li>
-                            <li class="next"><a href="#" rel="next">Próximo &gt;</a>
-                            </li>
-                        </ul>
-                        <!-- /.pagination -->
-                    </div>
-                </div>
+               
                 </c:if>
                 <!-- /#bottom -->
             </div>

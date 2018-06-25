@@ -30,5 +30,9 @@ public class FilmeService {
 	public FilmeTO carregar(int id) {
 		return dao.carregar(id);
 	}
+
+	public void deletar(int iId) {
+		dao.excluir(iId);
+	}
 	
 }

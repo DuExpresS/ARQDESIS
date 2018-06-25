@@ -41,8 +41,12 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="email">Idioma</label>
-                    <input type="text" class="form-control" name="idioma" id="idioma" required maxlength="60" placeholder="">
+                	<label> Idioma</label>
+                	<select name="idioma" multiple class="form-control">
+                		<c:forEach var="idioma" items="${idiomas}">
+                			<option value="${idioma.id }">${idioma.nome}</option>
+                		</c:forEach>
+                	</select>
                 </div>
             </div>
             <hr />

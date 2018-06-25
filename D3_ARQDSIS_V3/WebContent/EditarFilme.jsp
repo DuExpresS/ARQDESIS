@@ -32,19 +32,23 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="fone">Gênero</label>
-                                <input type="tel" class="form-control" name="fone" id="fone" maxlength="15" pattern="(?:\(\d{2}\)|\d{2})[- ]?\d{5}[- ]?\d{4}" placeholder="" value="${filme.genero }">
+                                <label for="genero">Gênero</label>
+                                <input type="text" class="form-control" name="genero"  placeholder="Gênero" value="${filme.genero }">
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="email">Idioma</label>
-                                <input type="email" class="form-control" name="email" id="email" required maxlength="60" placeholder="" value="${filme.idioma }">
-                            </div>
+                	<label> Idioma</label>
+                	<select name="idioma" multiple class="form-control">
+                		<c:forEach var="idioma" items="${idiomas}">
+                			<option value="${idioma.id }">${idioma.nome}</option>
+                		</c:forEach>
+                	</select>
+                </div>
                         </div>
                         <hr />
                         <div id="actions" class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="command" value="AlterarFilme">Salvar</button>
+                                <button type="submit" class="btn btn-primary" name="command" value="EditarFilme">Salvar</button>
                                 <a href="ListarFilmes.jsp" class="btn btn-default">Cancelar</a>
                             </div>
                         </div>

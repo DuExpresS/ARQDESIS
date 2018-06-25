@@ -9,7 +9,7 @@ public class FilmeTO {
 	private String nome;
 	private String genero;
 	private ArrayList<Idioma> idioma;
-	private String idioma2 = "Bossini Cuzão";
+	private String idioma2 = "Bossini FDP";
 	private String idioma3[];
 	private ArrayList<String> idioma4;
 	
@@ -19,11 +19,10 @@ public class FilmeTO {
 		this.nome = nome;
 		this.genero = genero;
 		this.idioma = idioma;
-		idioma4 = new ArrayList<String>();
 	}
 	
 	public FilmeTO() {
-		idioma4 = new ArrayList<String>();
+		this.idioma = new ArrayList<Idioma>();
 		
 	}
 
@@ -76,7 +75,7 @@ public class FilmeTO {
 	}
 	
 	public void setIdioma5(){
-		idioma4.add("Bossini Cuzão");
+		idioma4.add("Rola");
 	}
 	
 }

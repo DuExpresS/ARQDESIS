@@ -5,6 +5,14 @@ public class Idioma {
 	private int id;
 	private String nome;
 	
+	public Idioma() {
+		
+	}
+	
+public Idioma(int id) {
+		this.id = id;
+	}
+	
 	public int getId() {
 		return id;
 	}

@@ -35,7 +35,7 @@ public class FilmeDAO {
 		try (Connection conn = ConnectionFactory.obtemConexao();
 		PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
 				stm.setInt(1, idFilme);
-				stm.setInt(1, idIdioma);
+				stm.setInt(2, idIdioma);
 				stm.execute();
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -65,6 +65,7 @@ public class FilmeDAO {
 			stm.setInt(1, id);
 			try (ResultSet rs = stm.executeQuery();) {
 				if (rs.next()) {
+					filme.setId(id);
 					filme.setNome(rs.getString("nome"));
 					filme.setGenero(rs.getString("genero"));
 				} else {

@@ -63,9 +63,7 @@
                             <p><strong>Idioma</strong>
                             </p>
                             <p>
-                           		
-                            ${filme.idioma2 }
-                            
+                                ${filme.idioma[1] }
                             </p>
                         </div>
                     </div>

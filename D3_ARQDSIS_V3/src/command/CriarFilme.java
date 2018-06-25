@@ -21,9 +21,8 @@ public class CriarFilme implements Command {
 		String pId = request.getParameter("id");
 		String pNome = request.getParameter("nome");
 		String pGenero = request.getParameter("genero");
-		//String pIdioma[] = request.getParameterValues("idioma");
-		//String pIdioma2 = request.getParameter("idioma");
-		String pIdioma4 = request.getParameter("idioma");
+		String pIdioma[] = request.getParameterValues("idioma");
+		
 		
 		int id = -1;
 		try {
@@ -35,23 +34,15 @@ public class CriarFilme implements Command {
 		filme.setId(id);
 		filme.setNome(pNome);
 		filme.setGenero(pGenero);
-		//filme.setIdioma2(pIdioma2);
-		/*for (String idIdioma : pIdioma) {
-			Idioma idioma = new Idioma();
-			idioma.setId(Integer.parseInt(idIdioma));
-			idioma.setNome("PPK");
-			//filme.getIdioma().add(idioma);
-			filme.setIdioma(idioma);
-		}*/
-		//filme.setIdioma4(pIdioma[0]);
-		//filme.setIdioma4(pIdioma4);
-		filme.setIdioma5();
+		
+	    for (String idIdioma : pIdioma) {
+			filme.getIdioma().add(new Idioma(Integer.parseInt(idIdioma)));
+		}
 			
 		//instanciar o service
 		FilmeService ls = new FilmeService();
-		FilmeDAO ldao = new FilmeDAO();
 		ls.criar(filme);
-		//filme = ldao.carregar(filme.getId());
+		filme = ls.carregar(filme.getId());
 		
 		//enviar para o jsp
 		request.setAttribute("filme", filme);
