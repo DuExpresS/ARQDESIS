@@ -134,7 +134,7 @@ public class FilmeDAO {
 	public ArrayList<FilmeTO> listarIdioma(int id) {
 		FilmeTO filme;
 		ArrayList<FilmeTO> lista = new ArrayList<>();
-		String sqlSelect = "SELECT f.id, f.nome, f.genero FROM filme f inner join filme_idioma fi on fi.idFilme = f.id wherer fi.idIdioma = ?";
+		String sqlSelect = "SELECT f.id, f.nome, f.genero FROM filme f inner join filme_idioma fi on fi.idFilme = f.id where fi.idIdioma = ?";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {

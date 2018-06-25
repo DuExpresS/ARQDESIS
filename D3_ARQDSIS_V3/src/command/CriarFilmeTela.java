@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.IdiomaDAO;
+import service.IdiomaService;
 import service.IdiomaTO;
 
 public class CriarFilmeTela implements Command {
@@ -19,8 +20,8 @@ public class CriarFilmeTela implements Command {
 			
 			
 		//instanciar o service
-		IdiomaDAO ls = new IdiomaDAO();
-		ArrayList<IdiomaTO> idiomas = ls.listar();
+		IdiomaService lsIdioma = new IdiomaService();
+		ArrayList<IdiomaTO> idiomas = lsIdioma.listar();
 		
 		//enviar para o jsp
 		request.setAttribute("idiomas", idiomas);

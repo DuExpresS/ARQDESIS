@@ -15,8 +15,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="FilmeControler.do?command=BuscarFilmes">Filmes</a>
                     </li>
-                    <li><a href="#">Marcas</a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>

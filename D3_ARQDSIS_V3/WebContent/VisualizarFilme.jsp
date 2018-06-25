@@ -73,9 +73,9 @@
                     <hr />
                     <div id="actions" class="row">
                         <div class="col-md-12">
-                        <a class="btn btn-warning" href="controller.do?command=EditarFilmeTela&id=${filme.id }">Editar</a>
-                            <a class="btn btn-danger" href="controller.do?command=DeletarFilme&id=${filme.id }">Excluir</a>
-                            <a href="ListarFilmes.jsp" class="btn btn-default">Voltar</a>
+                        <a class="btn btn-warning" href="FilmeControler.do?command=EditarFilmeTela&id=${filme.id }">Editar</a>
+                            <a class="btn btn-danger" href="FilmeControler.do?command=DeletarFilme&id=${filme.id }">Excluir</a>
+                            <a href="FilmeControler.do?command=BuscarFilmes" class="btn btn-default">Voltar</a>
                         </div>
                     </div>
                 </div>

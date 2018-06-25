@@ -53,7 +53,7 @@
             <div id="actions" class="row">
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary" name="command" value="CriarFilme">Salvar</button>
-                    <a href="index.jsp" class="btn btn-default">Cancelar</a>
+                    <a href="FilmeControler.do?command=BuscarFilmes" class="btn btn-default">Cancelar</a>
                 </div>
             </div>
         </form>

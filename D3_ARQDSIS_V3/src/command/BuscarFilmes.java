@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.IdiomaDAO;
 import service.FilmeService;
 import service.FilmeTO;
+import service.IdiomaService;
 import service.IdiomaTO;
 
 public class BuscarFilmes implements Command {
@@ -22,8 +23,8 @@ public class BuscarFilmes implements Command {
 				FilmeService ls = new FilmeService();
 				ArrayList<FilmeTO> filmes = ls.BuscarTodos();
 				
-				IdiomaDAO ldao = new IdiomaDAO();
-				ArrayList<IdiomaTO> idiomas = ldao.listar();
+				IdiomaService lsIdioma = new IdiomaService();
+				ArrayList<IdiomaTO> idiomas = lsIdioma.listar();
 				
 				//enviar para o jsp
 				request.setAttribute("idiomas", idiomas);

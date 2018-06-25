@@ -21,7 +21,7 @@
                 <div id="main" class="container">
                     <h3 class="page-header">Editar Filme #${filme.id }</h3>
                     <!-- Formulario para alteração de filmes -->
-                    <form action="controller.do" method="post">
+                    <form action="FilmeControler.do" method="post">
                         <!-- area de campos do form -->
                         <input type="hidden" name="id" value="${filme.id }" />
                         <div class="row">
@@ -49,7 +49,7 @@
                         <div id="actions" class="row">
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary" name="command" value="EditarFilme">Salvar</button>
-                                <a href="ListarFilmes.jsp" class="btn btn-default">Cancelar</a>
+                                <a href="FilmeControler.do?command=BuscarFilmes" class="btn btn-default">Cancelar</a>
                             </div>
                         </div>
                     </form>

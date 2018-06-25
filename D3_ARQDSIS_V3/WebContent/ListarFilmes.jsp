@@ -98,11 +98,11 @@
                                                	${idioma.nome };
                                                </c:forEach></td>
 									<td class="actions"><a class="btn btn-success btn-xs"
-										href="controller.do?command=VisualizarFilme&id=${filme.id }">Visualizar</a>
+										href="FilmeControler.do?command=VisualizarFilme&id=${filme.id }">Visualizar</a>
 										<a class="btn btn-warning btn-xs"
-										href="controller.do?command=EditarFilmeTela&id=${filme.id }">Editar</a>
+										href="FilmeControler.do?command=EditarFilmeTela&id=${filme.id }">Editar</a>
 										<a class="btn btn-danger btn-xs"
-										href="controller.do?command=DeletarFilme&id=${filme.id }">Excluir</a>
+										href="FilmeControler.do?command=DeletarFilme&id=${filme.id }">Excluir</a>
 									</td>
 								</tr>
 							</c:forEach>
